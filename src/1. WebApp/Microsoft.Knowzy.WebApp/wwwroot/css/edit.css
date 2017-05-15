@@ -11,6 +11,7 @@
     margin-left: 20px;
     color: #0078d7;
     font-size: 16px;
+    width: 135px;
 }
 
 .add-item:hover {
@@ -19,4 +20,9 @@
 
 .button-action .glyphicon {
     margin-right: 15px;
+}
+
+table .delete-button:hover {
+    color: #0078d7;
+    cursor: pointer;
 }
