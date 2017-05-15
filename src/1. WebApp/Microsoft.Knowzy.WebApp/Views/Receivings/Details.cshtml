@@ -5,7 +5,7 @@
     Layout = "_Layout";
 }
 
-<div class="details-close glyphicon glyphicon-remove hidden-xs" onclick="location.href = '@(Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString()))'"></div>
+<div class="details-close icon-close hidden-xs" onclick="location.href = '@(Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString()))'"></div>
 <div class="row">
     <div class="col-xs-12 col-sm-6">
         <div class="row detail-main-info">
@@ -46,6 +46,6 @@
 <div class="row">
     <button type="button" class="center-block btn btn-default button-default button-action"
             onclick="location.href='@(Url.Action("Edit", "Receivings", new { orderId = Model.Id }))'">
-        <span class="glyphicon glyphicon-pencil"></span><span>Edit order</span>
+        <span class="icon-edit button-icon"></span><span>Edit order</span>
     </button>
 </div>

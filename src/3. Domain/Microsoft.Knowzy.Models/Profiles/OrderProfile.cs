@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using Microsoft.Knowzy.Domain;
 using Microsoft.Knowzy.Models.ViewModels;
 
@@ -14,7 +15,9 @@ namespace Microsoft.Knowzy.Models.Profiles
                 .ForMember(orderViewModel => orderViewModel.PostalCarrierName,
                     options => options.ResolveUsing(order => order.PostalCarrier.Name))
                 .ForMember(orderViewModel => orderViewModel.PostalCarrierId,
-                    options => options.ResolveUsing(order => order.PostalCarrier.Id));
+                    options => options.ResolveUsing(order => order.PostalCarrier.Id))
+                .ForMember(orderViewModel => orderViewModel.OrderLines,
+                    options => options.MapFrom(order => order.OrderLines.OrderBy(orderLine => orderLine.Id)));
         }
     }
 }

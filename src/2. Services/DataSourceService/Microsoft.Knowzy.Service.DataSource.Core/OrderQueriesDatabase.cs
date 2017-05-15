@@ -31,9 +31,7 @@ namespace Microsoft.Knowzy.Service.DataSource.Core
 
         public async Task<IEnumerable<ShippingsViewModel>> GetShippings()
         {
-            return await _context.Shippings
-                .Include(order => order.Customer)
-                .ProjectTo<ShippingsViewModel>().ToListAsync();
+            return await _context.Shippings.ProjectTo<ShippingsViewModel>().ToListAsync();
         }
 
         public async Task<IEnumerable<ShippingsViewModel>> GetShippings(int pageNumber, int pageCount)
@@ -59,11 +57,7 @@ namespace Microsoft.Knowzy.Service.DataSource.Core
 
         public async Task<ShippingViewModel> GetShipping(string orderId)
         {
-            return await _context.Shippings
-                        .Include(shipping => shipping.Customer)
-                        .Include(shipping => shipping.OrderLines)
-                        .Include(shipping => shipping.PostalCarrier)
-                        .ProjectTo<ShippingViewModel>()
+            return await _context.Shippings.ProjectTo<ShippingViewModel>()
                         .FirstOrDefaultAsync(shipping => shipping.Id == orderId);
         }
 
