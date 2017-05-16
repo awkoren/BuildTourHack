@@ -3,6 +3,11 @@
     src: url('../fonts/segoeui/segoeui.eot?#iefix') format('embedded-opentype'), url('../fonts/segoeui/segoeui.woff') format('woff'), url('../fonts/segoeui/segoeui.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Segoe MDL2 Assets';
+    src: url('../fonts/segoemdl2/segoemdl2.eot?#iefix') format('embedded-opentype'), url('../fonts/segoemdl2/segoemdl2.woff') format('woff'), url('../fonts/segoemdl2/segoemdl2.ttf') format('truetype');
+}
+
 html {
     height: 100%;
 }
@@ -41,6 +46,8 @@ textarea {
     max-width: 280px;
 }
 
+textarea{ resize: none;}
+
 button:focus {
     outline: 0 !important;
 }
@@ -71,6 +78,46 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'Segoe MDL2 Assets';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-remove:before {
+    content: '\e74d';
+}
+
+.icon-save:before {
+    content: '\e74e';
+}
+
+.icon-close:before {
+    content: '\e894';
+}
+
+.icon-add:before {
+    content: '\e710';
+}
+
+.icon-edit:before {
+    content: '\e70f';
+}
+
+.icon-separator {
+    margin-right: 10px;
+}
+
+.button-icon {
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 767px) {

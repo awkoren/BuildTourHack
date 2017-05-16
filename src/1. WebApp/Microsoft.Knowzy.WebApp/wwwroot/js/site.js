@@ -16,7 +16,7 @@
         (actualItems.length === 3) ? $('#addItem').removeClass('show').hide() : $('#addItem').show();
     });
 
-    $("table").on("click", ".delete", function(event) {
+    $("table").on("click", ".delete-button", function(event) {
         event.preventDefault();
         var tr = $(this).closest('tr');
         tr.fadeOut(400,

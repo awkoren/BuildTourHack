@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-close glyphicon glyphicon-remove"></span>
+                    <span class="icon-close"></span>
                 </button>
             </div>
             @{
@@ -22,7 +22,7 @@
                         <span class="section-title">@ViewData["Title"] information</span>
                         <button type="button" class="btn btn-default button-default button-header"
                                 onclick="location.href = '@(Url.Action("Create", ViewContext.RouteData.Values["controller"].ToString()))'">
-                            <span class="glyphicon glyphicon-plus"></span>
+                            <span class="icon-add"></span>
                         </button>
                     </div>
                 }
@@ -32,7 +32,7 @@
                         <span class="section-title section-title-centered">Order details</span>
                         <button type="button" class="btn btn-default button-default button-header"
                                 onclick="location.href = '@(Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString()))'">
-                            <span class="glyphicon glyphicon-remove"></span>
+                            <span class="icon-close"></span>
                         </button>
                     </div>
                 }

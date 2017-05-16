@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="details-close glyphicon glyphicon-remove hidden-xs" onclick="location.href = '@(Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString()))'"></div>
+<div class="details-close icon-close hidden-xs" onclick="location.href = '@(Url.Action("Index", ViewContext.RouteData.Values["controller"].ToString()))'"></div>
 <form asp-action="Edit" novalidate>
     <div class="row">
         <div class="col-xs-12 col-sm-6">
@@ -52,7 +52,7 @@
                 </table>
             </div>
             <div class="row">
-                <span id="addItem" class="add-item @(Model.OrderLines.Count < Model.MaxAvailableItems ? "show" : "hide")">Add new Item</span>
+                <span id="addItem" class="add-item @(Model.OrderLines.Count < Model.MaxAvailableItems ? "show" : "hide")"><span class="icon-add icon-separator"></span>Add new Item</span>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 details-right">
@@ -79,7 +79,7 @@
                 </dd>
                 <dt><label asp-for="Address"></label></dt>
                 <dd>
-                    <input asp-for="Address" class="form-control form-input" maxlength="80" />
+                    <textarea  asp-for="Address" class="form-control form-input" maxlength="100" rows="3"></textarea>
                     <span asp-validation-for="Address" class="text-danger"></span>
                 </dd>
                 <dt><label asp-for="Tracking"></label></dt>
@@ -94,7 +94,7 @@
     </div>
     <div class="row">
         <button type="submit" class="center-block btn btn-default button-default button-action">
-            <span class="glyphicon glyphicon-floppy-disk"></span><span>Save changes</span>
+            <span class="icon-save button-icon"></span><span>Save changes</span>
         </button>
     </div>
 </form>
