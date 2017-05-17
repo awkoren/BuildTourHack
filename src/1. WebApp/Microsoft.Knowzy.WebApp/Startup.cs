@@ -1,15 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Knowzy.Domain.Data;
 using Microsoft.Knowzy.Repositories.Core;
-using Microsoft.Knowzy.Service.DataSource.Core;
-using Microsoft.Knowzy.Service.DataSource.Contracts;
 using Micrososft.Knowzy.Repositories.Contracts;
 
 namespace Microsoft.Knowzy.WebApp
@@ -31,16 +26,12 @@ namespace Microsoft.Knowzy.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             ConfigureCommonServices(services);
-            services.AddEntityFrameworkSqlServer()
-                .AddDbContext<KnowzyContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("KnowzyContext")));
         }
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             ConfigureCommonServices(services);
-            services.AddEntityFrameworkSqlServer().AddDbContext<KnowzyContext>(
-                options => options.UseInMemoryDatabase());
+            services.AddScoped<IOrderRepository, OrderRepositoryDatabase>();
         }       
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -55,10 +46,9 @@ namespace Microsoft.Knowzy.WebApp
 
                 using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    var knowzyContext = serviceScope.ServiceProvider.GetService<KnowzyContext>();
                     var configuration = serviceScope.ServiceProvider.GetService<IConfiguration>();
                     var hostingEnvironment = serviceScope.ServiceProvider.GetService<IHostingEnvironment>();
-                    DatabaseInitializer.Seed(hostingEnvironment, configuration, knowzyContext).Wait();
+                    //DatabaseInitializer.Seed(hostingEnvironment, configuration, knowzyContext).Wait();
                 }
             }
             else
@@ -82,8 +72,6 @@ namespace Microsoft.Knowzy.WebApp
             services.AddAutoMapper();
 
             services.AddSingleton<IConfiguration>(Configuration);
-            services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IOrderQueries, OrderQueriesDatabase>();
         }
     }
 }

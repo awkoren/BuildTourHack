@@ -417,10 +417,6 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
@@ -429,11 +425,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\2. Services\Commands\Microsoft.Knowzy.Commands.OrderCommands\Microsoft.Knowzy.Commands.OrderCommands.csproj" />
-    <ProjectReference Include="..\..\2. Services\DataSourceService\Microsoft.Knowzy.Service.DataSource.Contracts\Microsoft.Knowzy.Service.DataSource.Contracts.csproj" />
-    <ProjectReference Include="..\..\2. Services\DataSourceService\Microsoft.Knowzy.Service.DataSource.Core\Microsoft.Knowzy.Service.DataSource.Core.csproj" />
     <ProjectReference Include="..\..\2. Services\Repositories\Microsoft.Knowzy.Repositories.Core\Microsoft.Knowzy.Repositories.Core.csproj" />
-    <ProjectReference Include="..\..\3. Domain\Microsoft.Knowzy.Domain.Data\Microsoft.Knowzy.Domain.Data.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Shared\DisplayTemplates\" />
