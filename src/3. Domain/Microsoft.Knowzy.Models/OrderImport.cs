@@ -5,7 +5,7 @@ namespace Microsoft.Knowzy.Models
 {
     public class OrderImport
     {
-        public IEnumerable<Receiving> Receivings { get; set; }
-        public IEnumerable<Shipping> Shippings { get; set; }
+        public List<Receiving> Receivings { get; set; }
+        public List<Shipping> Shippings { get; set; }
     }
 }
