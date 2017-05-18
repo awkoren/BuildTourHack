@@ -1,9 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Data.SqlClient;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Knowzy.DbInitializer;
 using Microsoft.Knowzy.Repositories.Core;
 using Micrososft.Knowzy.Repositories.Contracts;
 
@@ -50,6 +52,7 @@ namespace Microsoft.Knowzy.WebApp
                     var configuration = serviceScope.ServiceProvider.GetService<IConfiguration>();
                     var hostingEnvironment = serviceScope.ServiceProvider.GetService<IHostingEnvironment>();
                     //DatabaseInitializer.Seed(hostingEnvironment, configuration, knowzyContext).Wait();
+                    DbInitializerHelper.CreateDatabase(configuration.GetConnectionString("Knowzy"));
                 }
             }
             else
