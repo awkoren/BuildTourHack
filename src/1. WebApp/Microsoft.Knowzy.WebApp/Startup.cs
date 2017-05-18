@@ -1,9 +1,22 @@
-﻿using AutoMapper;
+﻿// ******************************************************************
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+// ******************************************************************
+
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Knowzy.DbInitializer;
 using Microsoft.Knowzy.Repositories.Core;
 using Micrososft.Knowzy.Repositories.Contracts;
 
@@ -50,6 +63,7 @@ namespace Microsoft.Knowzy.WebApp
                     var configuration = serviceScope.ServiceProvider.GetService<IConfiguration>();
                     var hostingEnvironment = serviceScope.ServiceProvider.GetService<IHostingEnvironment>();
                     //DatabaseInitializer.Seed(hostingEnvironment, configuration, knowzyContext).Wait();
+                    //DbInitializerHelper.CreateDatabase(configuration.GetConnectionString("Knowzy"));
                 }
             }
             else
