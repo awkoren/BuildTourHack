@@ -44,7 +44,7 @@ namespace Microsoft.Knowzy.WebApp
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
-            ConfigureCommonServices(services);
+            ConfigureCommonServices(services);            
             services.AddSingleton<IOrderRepository, OrderRepositoryMock>();
         }       
 
@@ -56,18 +56,16 @@ namespace Microsoft.Knowzy.WebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
-
+                app.UseBrowserLink();               
+            }
+            else
+            {
                 using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
                     var configuration = serviceScope.ServiceProvider.GetService<IConfiguration>();
                     var hostingEnvironment = serviceScope.ServiceProvider.GetService<IHostingEnvironment>();
-                    //DatabaseInitializer.Seed(hostingEnvironment, configuration, knowzyContext).Wait();
-                    //DbInitializerHelper.CreateDatabase(configuration.GetConnectionString("Knowzy"));
+                    DbInitializerHelper.InitializeDatabase(configuration, hostingEnvironment).Wait();
                 }
-            }
-            else
-            {
                 app.UseExceptionHandler("/Home/Error");
             }
 
