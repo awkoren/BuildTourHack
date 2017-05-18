@@ -270,7 +270,7 @@ ON [PRIMARY] TEXTIMAGE_ON [PRIMARY];
 
 CREATE TABLE [dbo].[OrderLines]([Id] [int] IDENTITY(1,1) NOT NULL,
 	                            [OrderId] [nvarchar](450) NULL,
-	                            [Price] [decimal](18, 2) NOT NULL,
+	                            [Price] [decimal](37, 2) NOT NULL,
 	                            [ProductId] [nvarchar](450) NULL,
 	                            [Quantity] [int] NOT NULL,
 CONSTRAINT [PK_OrderLines] PRIMARY KEY CLUSTERED ([Id] ASC)
@@ -286,7 +286,7 @@ CREATE TABLE [dbo].[Products]([Id] [nvarchar](450) NOT NULL,
 	                          [Description] [nvarchar](max) NOT NULL,
 	                          [Image] [nvarchar](max) NULL,
 	                          [Name] [nvarchar](max) NOT NULL,
-	                          [Price] [decimal](18, 2) NOT NULL,
+	                          [Price] [decimal](37, 2) NOT NULL,
 	                          [QuantityInStock] [nvarchar](max) NOT NULL,
 CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED ([Id] ASC)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) 
