@@ -26,12 +26,13 @@ namespace Microsoft.Knowzy.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             ConfigureCommonServices(services);
+            services.AddScoped<IOrderRepository, OrderRepositoryDatabase>();
         }
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             ConfigureCommonServices(services);
-            services.AddScoped<IOrderRepository, OrderRepositoryDatabase>();
+            services.AddSingleton<IOrderRepository, OrderRepositoryMock>();
         }       
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

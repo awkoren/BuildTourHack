@@ -138,7 +138,7 @@ namespace Microsoft.Knowzy.Repositories.Core
 
         private async Task InsertOrder<T>(IDbConnection db, string query, T entity) where T : Order
         {
-            var orderId = GenerateString(10);
+            var orderId = OrderRepositoryHelper.GenerateString(10);
 
             using (var transaction = db.BeginTransaction())
             {
@@ -232,16 +232,7 @@ namespace Microsoft.Knowzy.Repositories.Core
                 db.Open();
                 return await query.Invoke(db);
             }
-        }
-
-        private static string GenerateString(int size)
-        {
-            var random = new Random();
-            var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var chars = Enumerable.Range(0, size)
-                .Select(x => alphabet[random.Next(0, alphabet.Length)]);
-            return new string(chars.ToArray());
-        }
+        }      
 
         #endregion
     }

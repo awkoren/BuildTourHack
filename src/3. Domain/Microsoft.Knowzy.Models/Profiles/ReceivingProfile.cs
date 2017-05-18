@@ -8,9 +8,11 @@ namespace Microsoft.Knowzy.Models.Profiles
     {
         public ReceivingProfile()
         {
-            CreateMap<Receiving, ReceivingsViewModel>();
+            CreateMap<Receiving, ReceivingsViewModel>()
+                .IncludeBase<Order, OrdersViewModel>(); ;
 
-            CreateMap<Receiving, ReceivingViewModel>().ReverseMap();
+            CreateMap<Receiving, ReceivingViewModel>()
+                .IncludeBase<Order, OrderViewModel>().ReverseMap();
         }
     }
 }
