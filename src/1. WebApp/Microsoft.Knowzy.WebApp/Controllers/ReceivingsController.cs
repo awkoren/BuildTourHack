@@ -65,7 +65,11 @@ namespace Microsoft.Knowzy.WebApp.Controllers
         public async Task<IActionResult> Create()
         {
             await GenerateDropdowns();
-            return View(new ReceivingViewModel { OrderLines = new List<OrderLineViewModel>() });
+            return View(new ReceivingViewModel
+            {
+                PostalCarrierId = 1,
+                OrderLines = new List<OrderLineViewModel>()
+            });
         }
 
         [HttpPost]
