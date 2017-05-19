@@ -263,7 +263,7 @@ CREATE TABLE [dbo].[Order]([Id] [nvarchar](450) NOT NULL,
 	                       [Status] [int] NOT NULL,
 	                       [StatusUpdated] [datetime2](7) NULL,
 	                       [TimeStamp] [datetime2](7) NULL,
-	                       [Tracking] [nvarchar](max) NOT NULL,
+	                       [Tracking] [nvarchar](max) NULL,
 CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([Id] ASC)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) 
 ON [PRIMARY] TEXTIMAGE_ON [PRIMARY];
