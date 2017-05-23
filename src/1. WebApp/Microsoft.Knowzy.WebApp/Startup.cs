@@ -16,7 +16,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Knowzy.DbInitializer;
 using Microsoft.Knowzy.Repositories.Core;
 using Micrososft.Knowzy.Repositories.Contracts;
 
@@ -39,7 +38,7 @@ namespace Microsoft.Knowzy.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             ConfigureCommonServices(services);
-            services.AddScoped<IOrderRepository, OrderRepositoryDatabase>();
+            services.AddSingleton<IOrderRepository, OrderRepositoryMock>();
         }
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
@@ -59,13 +58,7 @@ namespace Microsoft.Knowzy.WebApp
                 app.UseBrowserLink();               
             }
             else
-            {
-                using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-                {
-                    var configuration = serviceScope.ServiceProvider.GetService<IConfiguration>();
-                    var hostingEnvironment = serviceScope.ServiceProvider.GetService<IHostingEnvironment>();
-                    DbInitializerHelper.InitializeDatabase(configuration, hostingEnvironment).Wait();
-                }
+            {                
                 app.UseExceptionHandler("/Home/Error");
             }
 

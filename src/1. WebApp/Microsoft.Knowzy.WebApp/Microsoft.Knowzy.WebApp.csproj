@@ -425,7 +425,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\2. Services\DbInitializer\Microsoft.Knowzy.DbInitializer\Microsoft.Knowzy.DbInitializer.csproj" />
     <ProjectReference Include="..\..\2. Services\Repositories\Microsoft.Knowzy.Repositories.Core\Microsoft.Knowzy.Repositories.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

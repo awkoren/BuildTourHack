@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. WebApp", "1. WebApp", "{5E1CA1D9-F3CB-4F30-B3C1-81B982BAB6ED}"
 EndProject
@@ -20,10 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micrososft.Knowzy.Repositories.Contracts", "src\2. Services\Repositories\Micrososft.Knowzy.Repositories.Contracts\Micrososft.Knowzy.Repositories.Contracts.csproj", "{B6F5698E-C7F6-40DC-83CD-E0FF64E81E52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Knowzy.Repositories.Core", "src\2. Services\Repositories\Microsoft.Knowzy.Repositories.Core\Microsoft.Knowzy.Repositories.Core.csproj", "{80A14156-7863-4B6C-BFAE-94807F4D813C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbInitializer", "DbInitializer", "{C1A96B7F-980D-4855-800D-B651B6C6A360}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Knowzy.DbInitializer", "src\2. Services\DbInitializer\Microsoft.Knowzy.DbInitializer\Microsoft.Knowzy.DbInitializer.csproj", "{84B7655D-20E5-4F66-87DB-657EF4CA27E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +47,6 @@ Global
 		{80A14156-7863-4B6C-BFAE-94807F4D813C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80A14156-7863-4B6C-BFAE-94807F4D813C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80A14156-7863-4B6C-BFAE-94807F4D813C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84B7655D-20E5-4F66-87DB-657EF4CA27E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84B7655D-20E5-4F66-87DB-657EF4CA27E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84B7655D-20E5-4F66-87DB-657EF4CA27E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84B7655D-20E5-4F66-87DB-657EF4CA27E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +58,5 @@ Global
 		{71F90FF4-2E48-4332-B60B-4FD4D4973C21} = {1C09AF31-89F7-4A97-8748-A4CCB64065CB}
 		{B6F5698E-C7F6-40DC-83CD-E0FF64E81E52} = {71F90FF4-2E48-4332-B60B-4FD4D4973C21}
 		{80A14156-7863-4B6C-BFAE-94807F4D813C} = {71F90FF4-2E48-4332-B60B-4FD4D4973C21}
-		{C1A96B7F-980D-4855-800D-B651B6C6A360} = {1C09AF31-89F7-4A97-8748-A4CCB64065CB}
-		{84B7655D-20E5-4F66-87DB-657EF4CA27E4} = {C1A96B7F-980D-4855-800D-B651B6C6A360}
 	EndGlobalSection
 EndGlobal
